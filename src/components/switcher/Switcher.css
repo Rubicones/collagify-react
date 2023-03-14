@@ -1,0 +1,75 @@
+.toggle-switch-container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.tri-state-toggle input {
+    width: 279px;
+    height: 130px;
+    appearance: none;
+    background-color: #ffffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.tri-state-toggle input:hover {
+    cursor: pointer;
+}
+
+.tri-state-toggle {
+    position: relative;
+    width: 850px;
+    display: flex;
+    justify-content: center;
+    border: 7px solid #ffffff83;
+    border-radius: 95px;
+}
+
+#one{
+    border-radius: 0;
+    border-top-left-radius: 88px;
+    border-bottom-left-radius: 88px;
+    opacity: 0.56;
+}
+
+
+#two{
+    border-radius: 0;
+}
+
+#three{
+    border-radius: 0;
+    border-top-right-radius: 88px;
+    border-bottom-right-radius: 88px;
+}
+
+.input-value{
+    display: inline;
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+    pointer-events: none;
+}
+
+#fav-artist{
+    top: 48px;
+    left: 40px;
+}
+
+#fav-playlist{
+    top: 48px;
+    left: 300px;
+}
+
+#whole-lib{
+    top: 48px;
+    left: 605px;
+}

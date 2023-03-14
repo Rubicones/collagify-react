@@ -1,0 +1,72 @@
+.choose-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choose-search__container{
+    margin-top: 50px;
+    width: 50vw;
+    height: 50vh;
+    min-height: 450px;
+    border-radius: 2vw;
+    background-color: #24d34d00;
+    border: 5px solid #ffffff83;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+.choose-search__output{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.search-item{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 3vw;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-item__active{
+    font-weight: 800;
+    font-size: 2vw;
+    text-align: center;
+    background-color: #60606083;
+}
+
+.search-item:hover{
+    background-color: #afafaf83;
+    border-radius: 6px;
+}
+
+.search-item::after{
+    content: "";
+    display: block;
+    width: 40vw;
+    height: 3px;
+    background-color: #ffffff83;
+}
+
+.wholeLibHeader{
+    margin-top: 10vh;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 3vw;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+}

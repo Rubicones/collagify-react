@@ -1,0 +1,137 @@
+body{
+    background-color: #24D34E;
+}
+
+header{
+    height: 200px;
+    width: 100%;
+
+}
+
+h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+h2{
+    width: 70%;
+    margin: 80px auto 3vw auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.subheader-container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.subheader-nickname{
+    width: 20%;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+}
+
+.choose-source{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-size{
+    text-align: center;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0.025em;
+    color: #FFFFFF;
+}
+
+.blurredView{
+    position:absolute;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalEnter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    width: 35vw;
+    height: 40vh;
+    border-radius: 2vw;
+    background-color: black;
+    color: white;
+    z-index: 10;
+}
+
+.greetings{
+    display: inline-block;
+    margin-top: 5vh;
+}
+
+.greetings span{
+    color: #24D34E;
+}
+
+.enterSpoti{
+    height: 8vh;
+    width: 22vw;
+    background-color: #24D34E;
+    border-radius: 3vw;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.spotiLogo{
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
