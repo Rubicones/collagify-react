@@ -1,5 +1,6 @@
 let Spotify = require("spotify-web-api-js");
 
+
 class SpotifyService{
   spotifyApi = new Spotify();
   AUTHORIZE = "https://accounts.spotify.com/authorize";
@@ -8,7 +9,7 @@ class SpotifyService{
   client_secret = "cedf0d5444154f968dfc92c1ca974e5e";
   access_token = localStorage.getItem("access_token");
   refresh_token
-  redirect_uri = "https://collagify.netlify.app/" // сюда кидать свой сервер
+  redirect_uri = "https://rubicones.github.io/collagify/" // сюда кидать свой сервер
 
   requestAuthorization = () => {
     this.client_id = "7cf19d9a363446d79276d46b37418a9f";

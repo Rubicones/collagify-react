@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Preview.css";
+import {ReactComponent as Spinner} from "../../img/spinner.svg"
 
 function findDominant(imageUrl) {
   return new Promise((resolve, reject) => {
@@ -68,8 +69,10 @@ function findDominant(imageUrl) {
 
 function Preview(props) {
   const [squares, setSquares] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const newCanvas = () => {
+    setLoading(true)
     const canvas = document.createElement('canvas');
   
     const width = 4000 / (props.cols > props.rows ? props.cols : props.rows);
@@ -117,8 +120,10 @@ function Preview(props) {
       link.download = 'canvas.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
+      setLoading(false)
     }).catch((error) => {
       console.error(error);
+      setLoading(false)
     });
   };
   
@@ -143,8 +148,8 @@ function Preview(props) {
     let newSquares = [];
     for (let i = 0; i < rows * cols; i++) {
       let styles = {
-        width: (750 / (cols > rows ? cols : rows)) + "px",
-        height: (750 / (cols > rows ? cols : rows)) + "px",
+        width: (60 / (cols > rows ? cols : rows)) + "vw",
+        height: (60 / (cols > rows ? cols : rows)) + "vw",
         backgroundImage: `url(${props.albums.length > 0 ? props.albums[i] : ""})`
       }
       let newSquare = <div key={i} className="square" style={styles}></div>;
@@ -159,6 +164,9 @@ function Preview(props) {
       <div className="preview-grid" style={{ gridTemplateRows: `repeat(${props.rows}, 1fr)` }}>
         {squares}
       </div>
+      {loading ? <Spinner/> : null}
+      <div className="preview-header">Tap at the collage to create and download a collagified version</div>
+
     </section>
     
   );

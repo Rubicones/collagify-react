@@ -2,7 +2,7 @@ import "./CheckList.css"
 import SpotifyService from "../services/SpotifyService"
 import {ReactComponent as Spinner} from "../../img/spinner.svg"
 import { useEffect, useState } from "react"
-import { click } from "@testing-library/user-event/dist/click"
+
 function ListItem({selectedID, selected, name, id}) {
     return(
         <li className={(selectedID == id) ? "search-item search-item__active" : "search-item"} onClick={selected}>{name}</li>
