@@ -41,16 +41,24 @@ function App() {
   const onLogin = () => {
       service.requestAuthorization()
   } 
+
+  useEffect(() => {
+    if (switcher == 3){
+      service.getMySavedTracks(1, 0).then(res => {setColsCount(res.total); setRowsCount(1)})
+      service.setSavedTracks().then(res => {setAlbums(res); return res}).then(res => setTotal(res.length))
+    }
+  }, [switcher])
   
   const onNewSelect = (id) => {
     if (switcher == 1){
-      service.getArtistAlbums(id, 1, 0).then(res => {setTotal(res.total); setColsCount(res.total); setRowsCount(1)})
-      service.setArtistsAlbums(id).then(res => setAlbums(res))
+      service.getArtistAlbums(id, 1, 0).then(res => {setColsCount(res.total); setRowsCount(1)})
+      service.setArtistsAlbums(id).then(res => {setAlbums(res); return res}).then(res => setTotal(res.length))
     }
     if (switcher == 2){
-      service.getPlaylistAlbums(id, 1, 0).then(res => {setTotal(res.total); setColsCount(res.total); setRowsCount(1); console.log(res)})
-      service.setPlaylistAlbums(id).then(res => setAlbums(res))
+      service.getPlaylistAlbums(id, 1, 0).then(res => {setColsCount(res.total); setRowsCount(1); console.log(res)})
+      service.setPlaylistAlbums(id).then(res => {setAlbums(res); return res}).then(res => setTotal(res.length))
     }
+    
   }
 
   return (

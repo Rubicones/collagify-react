@@ -18,18 +18,21 @@
 
 .preview-grid{
     margin-top: 2vw;
+    height: 100%;
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
-    margin-bottom: 1000px;
+    margin-bottom: 10px;
     border: 2px solid #ffffff83;
     border-radius: 5px;
 }
 
 .square{
+    width: 100%;
+    height: 100%;
     background-color: rgba(250, 235, 215, 0);
     box-sizing: border-box;
-    border: 2px solid #ffffff83;
+    border: 1px solid #ffffff83;
     box-sizing: border-box;
 	background-size:cover; 
 	background-position:center; 
