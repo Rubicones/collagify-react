@@ -28,16 +28,20 @@ function App() {
       document.body.style.overflow = "scroll"
       setBlur({})
       setLoginView(null)
+      service.onPageLoad()
+      console.log(1)
     }
     else if (localStorage.getItem("access_token")){
+      document.body.style.overflow = "scroll"
+      setBlur({})
+      setLoginView(null)
       if (service.onPageLoad()){
-        document.body.style.overflow = "scroll"
-        setBlur({})
-        setLoginView(null)
+        service.getName().then(res => setName(res))
+      } else {
+        setBlur({"WebkitFilter": "blur(4px)"})
+        setLoginView(true)
       }
     }
-
-    service.getName().then(res => setName(res))
   }, [])
 
   const onLogin = () => {
@@ -88,7 +92,7 @@ function App() {
           <section className="choose-source">
             <h2>Choose what to make a collage from</h2>
             <Switcher onSwitch={(state) => setSwitcher(state)}/>
-            <CheckList switch={switcher} newSelect={(id) => onNewSelect(id)}/>
+            <CheckList loginView={isloginView} switch={switcher} newSelect={(id) => onNewSelect(id)}/>
           </section>
 
           <section className="col-size">

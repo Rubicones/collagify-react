@@ -9,7 +9,7 @@ class SpotifyService{
   client_secret = "cedf0d5444154f968dfc92c1ca974e5e";
   access_token = localStorage.getItem("access_token");
   refresh_token
-  redirect_uri = "https://rubicones.github.io/collagify/" // сюда кидать свой сервер
+  redirect_uri = "http://localhost:3000/" // сюда кидать свой сервер
 
   requestAuthorization = () => {
     this.client_id = "7cf19d9a363446d79276d46b37418a9f";
@@ -149,6 +149,9 @@ class SpotifyService{
         res.items.forEach(item => playlists.push([item.id, item.name]))
         offset += limit
         total = res.total
+      }).catch((res) => {
+        console.log("failed")
+        console.log(res)
       })
     }
     return playlists
@@ -209,7 +212,7 @@ class SpotifyService{
       })
     }
 
-    return Array.from(new Set(albums))
+    return albums
   }
 
   async getFollowedArtists(limit, after) {
